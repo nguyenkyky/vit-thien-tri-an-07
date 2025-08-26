@@ -52,6 +52,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				memorial: {
+					red: 'hsl(var(--memorial-red))',
+					gold: 'hsl(var(--memorial-gold))',
+					cream: 'hsl(var(--memorial-cream))',
+					dark: 'hsl(var(--memorial-dark))',
+					gray: 'hsl(var(--memorial-gray))',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
