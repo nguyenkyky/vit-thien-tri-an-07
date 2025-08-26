@@ -241,6 +241,23 @@ const About = () => {
                 </div>
               </div>
 
+              {/* Statistics Cards */}
+              <div className="grid grid-cols-2 gap-4">
+                <Card className="bg-gradient-to-br from-memorial-red/10 to-memorial-red/20 border-memorial-red/30">
+                  <CardContent className="p-4 text-center">
+                    <div className="text-2xl font-bold text-memorial-red mb-1">2000+</div>
+                    <p className="text-xs text-memorial-gray">Mộ liệt sĩ</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="bg-gradient-to-br from-memorial-gold/10 to-memorial-gold/20 border-memorial-gold/30">
+                  <CardContent className="p-4 text-center">
+                    <div className="text-2xl font-bold text-memorial-gold mb-1">45+</div>
+                    <p className="text-xs text-memorial-gray">Năm gìn giữ</p>
+                  </CardContent>
+                </Card>
+              </div>
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="aspect-square bg-gradient-to-br from-memorial-gold/30 to-memorial-cream rounded-lg overflow-hidden shadow-memorial">
                   <div className="w-full h-full flex items-center justify-center">
@@ -257,6 +274,50 @@ const About = () => {
                       <Heart className="w-10 h-10 text-memorial-red mx-auto mb-2 opacity-60" />
                       <p className="text-sm text-memorial-gray">Khu mộ liệt sĩ</p>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Historical Timeline */}
+              <Card className="bg-gradient-to-br from-memorial-cream/50 to-memorial-gold/10 border-memorial-gold/20">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-lg text-memorial-dark flex items-center gap-2">
+                    <Calendar className="w-5 h-5 text-memorial-red" />
+                    Dòng thời gian
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-memorial-red rounded-full"></div>
+                    <div>
+                      <p className="text-sm font-medium text-memorial-dark">1979</p>
+                      <p className="text-xs text-memorial-gray">Thành lập nghĩa trang</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-memorial-gold rounded-full"></div>
+                    <div>
+                      <p className="text-sm font-medium text-memorial-dark">1990s</p>
+                      <p className="text-xs text-memorial-gray">Mở rộng quy mô</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-memorial-red rounded-full"></div>
+                    <div>
+                      <p className="text-sm font-medium text-memorial-dark">2000s</p>
+                      <p className="text-xs text-memorial-gray">Hiện đại hóa</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Gallery placeholder */}
+              <div className="aspect-[4/3] bg-gradient-to-br from-memorial-red/10 via-memorial-cream/30 to-memorial-gold/10 rounded-lg overflow-hidden shadow-memorial">
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="text-center p-6">
+                    <Users className="w-12 h-12 text-memorial-red mx-auto mb-3 opacity-60" />
+                    <h4 className="text-lg font-semibold text-memorial-dark mb-2">Hoạt động cộng đồng</h4>
+                    <p className="text-sm text-memorial-gray">Kết nối các gia đình liệt sĩ</p>
                   </div>
                 </div>
               </div>
