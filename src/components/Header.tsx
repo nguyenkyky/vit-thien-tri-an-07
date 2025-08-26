@@ -54,7 +54,19 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
-            {menuItems.map((item, index) => (
+            <a
+              href="/"
+              className="text-memorial-dark hover:text-memorial-red transition-colors font-medium"
+            >
+              Trang chủ
+            </a>
+            <a
+              href="/about"
+              className="text-memorial-dark hover:text-memorial-red transition-colors font-medium"
+            >
+              Giới thiệu
+            </a>
+            {menuItems.slice(1).map((item, index) => (
               <a
                 key={index}
                 href="#"
