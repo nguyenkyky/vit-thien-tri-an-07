@@ -139,6 +139,92 @@ const About = () => {
                   </li>
                 </ul>
               </div>
+
+              {/* Bảo tồn ký ức lịch sử */}
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <Flag className="w-6 h-6 text-memorial-red" />
+                  <h2 className="text-3xl font-bold text-memorial-dark">Bảo tồn ký ức lịch sử</h2>
+                </div>
+                <p className="text-memorial-gray leading-relaxed mb-4">
+                  Lưu giữ và truyền tải những câu chuyện anh hùng, những ký ức thiêng liêng về cuộc chiến bảo vệ biên giới. 
+                  Mỗi mộ phần là một trang sử sống động, ghi dấu những khoảnh khắc anh dũng của các chiến sĩ Việt Nam.
+                </p>
+                <div className="bg-memorial-cream/30 p-6 rounded-lg border border-memorial-gold/20">
+                  <p className="text-memorial-gray leading-relaxed">
+                    Chúng tôi không ngừng thu thập, sắp xếp và lưu trữ các tài liệu, hình ảnh, kỷ vật liên quan đến 
+                    cuộc chiến và các anh hùng liệt sĩ, tạo thành kho tàng tư liệu quý báu cho thế hệ hôm nay và mai sau.
+                  </p>
+                </div>
+              </div>
+
+              {/* Hỗ trợ thân nhân */}
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <Heart className="w-6 h-6 text-memorial-red" />
+                  <h2 className="text-3xl font-bold text-memorial-dark">Hỗ trợ thân nhân</h2>
+                </div>
+                <p className="text-memorial-gray leading-relaxed mb-4">
+                  Đồng hành cùng gia đình liệt sĩ trong việc tìm kiếm thông tin, tổ chức tưởng niệm và duy trì 
+                  mối liên hệ tinh thần với người thân đã khuất. Mỗi gia đình đều được quan tâm, hỗ trợ tận tình.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-memorial-red rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-memorial-gray">Hỗ trợ tra cứu thông tin và vị trí mộ liệt sĩ</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-memorial-red rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-memorial-gray">Tổ chức các buổi tưởng niệm theo yêu cầu gia đình</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-memorial-red rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-memorial-gray">Kết nối các gia đình có hoàn cảnh tương tự</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Kết nối cộng đồng */}
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <Users className="w-6 h-6 text-memorial-red" />
+                  <h2 className="text-3xl font-bold text-memorial-dark">Kết nối cộng đồng</h2>
+                </div>
+                <p className="text-memorial-gray leading-relaxed mb-4">
+                  Tạo cầu nối giữa các thế hệ, kết nối người dân khắp nơi trong tinh thần tri ân và tôn vinh 
+                  những giá trị cao đẹp của dân tộc. Nghĩa trang là điểm hẹn của tình yêu nước và lòng biết ơn.
+                </p>
+                <div className="bg-memorial-gold/10 p-6 rounded-lg border border-memorial-gold/30">
+                  <p className="text-memorial-gray leading-relaxed">
+                    Thông qua các hoạt động tưởng niệm, triển lãm và chương trình giáo dục, chúng tôi góp phần 
+                    xây dựng cộng đồng đoàn kết, có trách nhiệm với lịch sử và truyền thống dân tộc.
+                  </p>
+                </div>
+              </div>
+
+              {/* Giáo dục thế hệ trẻ */}
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <Award className="w-6 h-6 text-memorial-red" />
+                  <h2 className="text-3xl font-bold text-memorial-dark">Giáo dục thế hệ trẻ</h2>
+                </div>
+                <p className="text-memorial-gray leading-relaxed mb-4">
+                  Nuôi dưỡng lòng yêu nước, tự hào dân tộc trong lòng thế hệ trẻ qua những bài học sống 
+                  về lòng dũng cảm và tinh thần hy sinh. Mỗi chuyến thăm là một bài học về lòng yêu nước.
+                </p>
+                <div className="grid grid-cols-1 gap-4">
+                  <div className="bg-memorial-cream/40 p-6 rounded-lg border border-memorial-gold/20">
+                    <h4 className="font-semibold text-memorial-dark mb-3 flex items-center gap-2">
+                      <Award className="w-4 h-4 text-memorial-red" />
+                      Chương trình giáo dục
+                    </h4>
+                    <p className="text-memorial-gray leading-relaxed">
+                      Tổ chức các buổi học ngoại khóa, kể chuyện lịch sử cho học sinh, giúp các em hiểu rõ 
+                      về truyền thống anh hùng của dân tộc.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Right Content - Image Section */}
@@ -192,105 +278,6 @@ const About = () => {
                   </blockquote>
                 </CardContent>
               </Card>
-            </div>
-          </div>
-
-          {/* Additional Sections */}
-          <div className="mt-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-memorial-dark mb-4">
-                Sứ mệnh và trách nhiệm
-              </h2>
-              <p className="text-memorial-gray max-w-3xl mx-auto leading-relaxed">
-                Nghĩa trang Liệt sĩ Vị Xuyên không chỉ là nơi an nghỉ mà còn là trung tâm kết nối, 
-                giáo dục và bảo tồn giá trị truyền thống dân tộc.
-              </p>
-            </div>
-
-            <div className="space-y-12 mb-16">
-              {/* Bảo tồn ký ức lịch sử */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <Flag className="w-6 h-6 text-memorial-red" />
-                  <h3 className="text-2xl font-bold text-memorial-dark">Bảo tồn ký ức lịch sử</h3>
-                </div>
-                <p className="text-memorial-gray leading-relaxed mb-4">
-                  Lưu giữ và truyền tải những câu chuyện anh hùng, những ký ức thiêng liêng về cuộc chiến bảo vệ biên giới. 
-                  Mỗi mộ phần là một trang sử sống động, ghi dấu những khoảnh khắc anh dũng của các chiến sĩ Việt Nam.
-                </p>
-                <div className="bg-memorial-cream/30 p-5 rounded-lg border border-memorial-gold/20">
-                  <p className="text-memorial-gray leading-relaxed">
-                    Chúng tôi không ngừng thu thập, sắp xếp và lưu trữ các tài liệu, hình ảnh, kỷ vật liên quan đến 
-                    cuộc chiến và các anh hùng liệt sĩ, tạo thành kho tàng tư liệu quý báu cho thế hệ hôm nay và mai sau.
-                  </p>
-                </div>
-              </div>
-
-              {/* Hỗ trợ thân nhân */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <Heart className="w-6 h-6 text-memorial-red" />
-                  <h3 className="text-2xl font-bold text-memorial-dark">Hỗ trợ thân nhân</h3>
-                </div>
-                <p className="text-memorial-gray leading-relaxed mb-4">
-                  Đồng hành cùng gia đình liệt sĩ trong việc tìm kiếm thông tin, tổ chức tưởng niệm và duy trì 
-                  mối liên hệ tinh thần với người thân đã khuất. Mỗi gia đình đều được quan tâm, hỗ trợ tận tình.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-memorial-red rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-memorial-gray">Hỗ trợ tra cứu thông tin và vị trí mộ liệt sĩ</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-memorial-red rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-memorial-gray">Tổ chức các buổi tưởng niệm theo yêu cầu gia đình</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-memorial-red rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-memorial-gray">Kết nối các gia đình có hoàn cảnh tương tự</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Kết nối cộng đồng */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <Users className="w-6 h-6 text-memorial-red" />
-                  <h3 className="text-2xl font-bold text-memorial-dark">Kết nối cộng đồng</h3>
-                </div>
-                <p className="text-memorial-gray leading-relaxed mb-4">
-                  Tạo cầu nối giữa các thế hệ, kết nối người dân khắp nơi trong tinh thần tri ân và tôn vinh 
-                  những giá trị cao đẹp của dân tộc. Nghĩa trang là điểm hẹn của tình yêu nước và lòng biết ơn.
-                </p>
-                <div className="bg-memorial-gold/10 p-5 rounded-lg border border-memorial-gold/30">
-                  <p className="text-memorial-gray leading-relaxed">
-                    Thông qua các hoạt động tưởng niệm, triển lãm và chương trình giáo dục, chúng tôi góp phần 
-                    xây dựng cộng đồng đoàn kết, có trách nhiệm với lịch sử và truyền thống dân tộc.
-                  </p>
-                </div>
-              </div>
-
-              {/* Giáo dục thế hệ trẻ */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <Award className="w-6 h-6 text-memorial-red" />
-                  <h3 className="text-2xl font-bold text-memorial-dark">Giáo dục thế hệ trẻ</h3>
-                </div>
-                <p className="text-memorial-gray leading-relaxed mb-4">
-                  Nuôi dưỡng lòng yêu nước, tự hào dân tộc trong lòng thế hệ trẻ qua những bài học sống 
-                  về lòng dũng cảm và tinh thần hy sinh. Mỗi chuyến thăm là một bài học về lòng yêu nước.
-                </p>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-memorial-cream/40 p-4 rounded-lg">
-                    <h4 className="font-semibold text-memorial-dark mb-2">Chương trình giáo dục</h4>
-                    <p className="text-sm text-memorial-gray">Tổ chức các buổi học ngoại khóa, kể chuyện lịch sử cho học sinh</p>
-                  </div>
-                  <div className="bg-memorial-cream/40 p-4 rounded-lg">
-                    <h4 className="font-semibold text-memorial-dark mb-2">Hoạt động trải nghiệm</h4>
-                    <p className="text-sm text-memorial-gray">Các hoạt động thực tế giúp thế hệ trẻ hiểu sâu sắc về lịch sử</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
