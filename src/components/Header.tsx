@@ -66,7 +66,13 @@ const Header = () => {
             >
               Giới thiệu
             </a>
-            {menuItems.slice(1).map((item, index) => (
+            <a
+              href="/tomb-search"
+              className="text-memorial-dark hover:text-memorial-red transition-colors font-medium"
+            >
+              Tra cứu mộ
+            </a>
+            {menuItems.slice(2).map((item, index) => (
               <a
                 key={index}
                 href="#"
