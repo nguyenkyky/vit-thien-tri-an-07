@@ -27,8 +27,8 @@ const About = () => {
             </h1>
             
             <p className="text-xl text-memorial-gray max-w-3xl mx-auto leading-relaxed">
-              Nơi an nghỉ trang nghiêm của các Anh hùng Liệt sĩ đã hy sinh vì độc lập, tự do của Tổ quốc. 
-              Mỗi phần mộ là một câu chuyện anh dũng, mỗi tấm bia là một lời tri ân vĩnh cửu.
+              Trên mảnh đất địa đầu cực Bắc Tổ quốc, có hai địa danh thiêng liêng gắn liền với ký ức bi tráng của một thời máu lửa: 
+              Nghĩa trang Liệt sĩ Vị Xuyên và Đền thờ các Anh hùng liệt sĩ mặt trận Vị Xuyên tại điểm cao 468.
             </p>
           </div>
         </div>
@@ -49,8 +49,8 @@ const About = () => {
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-memorial-gray leading-relaxed">
-                  Tọa lạc tại Điểm cao 468, xã Vị Xuyên, huyện Vị Xuyên, tỉnh Hà Giang - 
-                  nơi có vị trí chiến lược quan trọng trong việc bảo vệ biên giới phía Bắc.
+                  Nghĩa trang tọa lạc tại thôn 18, xã Vị Xuyên, tỉnh Tuyên Quang. Đền thờ nằm trên 
+                  điểm cao 468 thuộc thôn Nặm Ngặt, xã Thanh Thủy, cách nghĩa trang khoảng 40km về phía Bắc.
                 </p>
               </CardContent>
             </Card>
@@ -64,7 +64,7 @@ const About = () => {
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-memorial-gray leading-relaxed">
-                  Được thành lập năm 1979, sau cuộc chiến tranh bảo vệ biên giới phía Bắc, 
+                  Nghĩa trang được xây dựng năm 1990 hoàn thành năm 1991, sau cuộc chiến tranh bảo vệ biên giới phía Bắc (1979-1989), 
                   để tôn vinh và ghi nhớ những anh hùng đã ngã xuống vì Tổ quốc.
                 </p>
               </CardContent>
@@ -79,8 +79,8 @@ const About = () => {
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-memorial-gray leading-relaxed">
-                  Là nơi an nghỉ của hàng nghìn liệt sĩ từ khắp các tỉnh thành trên cả nước, 
-                  với thiết kế trang trọng, khang trang phù hợp với không gian thiêng liêng.
+                  Với diện tích 11.4ha, là nơi yên nghỉ của 1957 liệt sĩ và 01 phần mộ liệt sĩ tập thể. 
+                  Được xây dựng khang trang với các khu vực: Đền thờ liệt sĩ, Tượng đài Tổ quốc ghi công và các khu mộ.
                 </p>
               </CardContent>
             </Card>
@@ -97,10 +97,9 @@ const About = () => {
                   <h2 className="text-3xl font-bold text-memorial-dark">Điểm cao 468</h2>
                 </div>
                 <p className="text-memorial-gray leading-relaxed mb-6">
-                  Nghĩa trang Liệt sĩ Vị Xuyên tọa lạc trên Điểm cao 468 - một vị trí địa lý có ý nghĩa 
-                  lịch sử đặc biệt quan trọng. Đây không chỉ là nơi diễn ra những trận chiến oanh liệt 
-                  trong cuộc chiến tranh bảo vệ biên giới phía Bắc năm 1979, mà còn là biểu tượng của 
-                  tinh thần bất굴, ý chí kiên cường của quân và dân ta.
+                  Đền thờ các Anh hùng liệt sĩ mặt trận Vị Xuyên nằm trên điểm cao 468 - từng là "tọa độ lửa" 
+                  khốc liệt nhất trong những năm tháng chiến tranh. Tại đây, những người lính mặt trận Vị Xuyên 
+                  đã kiên cường bám trụ, với tinh thần "sống bám đá đánh giặc, chết hoá đá bất tử", viết nên bản anh hùng ca bất diệt.
                 </p>
                 
                 <div className="bg-memorial-cream/50 p-6 rounded-lg border border-memorial-gold/20">
@@ -109,9 +108,8 @@ const About = () => {
                     Ý nghĩa lịch sử
                   </h3>
                   <p className="text-memorial-gray leading-relaxed">
-                    Từ độ cao 468m so với mực nước biển, nơi đây đã chứng kiến những hy sinh cao cả 
-                    của các chiến sĩ Việt Nam. Mỗi tấm bia mộ đều ghi dấu một cuộc đời anh dũng, 
-                    một tấm lòng son sắt với Tổ quốc.
+                    Đền thờ được xây dựng ngay trên mảnh đất này, nơi đặt sở chỉ huy tiền phương của ta trong chiến dịch, 
+                    là ngôi nhà chung của hơn 4.000 cán bộ chiến sĩ đã anh dũng hy sinh trong cuộc chiến đấu bảo vệ biên giới phía bắc của Tổ Quốc.
                   </p>
                 </div>
               </div>
@@ -122,22 +120,17 @@ const About = () => {
                   <h2 className="text-3xl font-bold text-memorial-dark">Sứ mệnh thiêng liêng</h2>
                 </div>
                 <p className="text-memorial-gray leading-relaxed mb-4">
-                  Nghĩa trang không chỉ là nơi an nghỉ của các anh hùng liệt sĩ, mà còn là:
+                  Hai địa điểm - một chiến trường, gắn liền thành hành trình tri ân đầy ý nghĩa. Mỗi nén nhang, 
+                  mỗi bước chân về nguồn tại đền thờ là sự kết nối quá khứ – hiện tại, là lời tri ân gửi tới những người 
+                  đã hiến dâng tuổi xuân, máu xương cho Tổ quốc.
                 </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-memorial-red rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-memorial-gray">Trung tâm giáo dục truyền thống yêu nước cho các thế hệ</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-memorial-red rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-memorial-gray">Nơi kết nối tình cảm giữa các gia đình liệt sĩ</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-memorial-red rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-memorial-gray">Biểu tượng của lòng biết ơn của dân tộc</span>
-                  </li>
-                </ul>
+                <div className="bg-memorial-cream/30 p-6 rounded-lg border border-memorial-gold/20">
+                  <p className="text-memorial-gray leading-relaxed">
+                    Ngày nay, đền thờ các Anh hùng liệt sĩ mặt trận Vị Xuyên và nghĩa trang liệt sĩ Vị Xuyên đã trở thành 
+                    "địa chỉ đỏ" trong hành trình về nguồn của đồng bào cả nước. Hàng vạn lượt người mỗi năm đã về đây 
+                    dâng hương, tri ân, đặc biệt trong những ngày: 12/7, 27/7, 22/12.
+                  </p>
+                </div>
               </div>
 
               {/* Bảo tồn ký ức lịch sử */}
@@ -245,15 +238,15 @@ const About = () => {
               <div className="grid grid-cols-2 gap-4">
                 <Card className="bg-gradient-to-br from-memorial-red/10 to-memorial-red/20 border-memorial-red/30">
                   <CardContent className="p-4 text-center">
-                    <div className="text-2xl font-bold text-memorial-red mb-1">2000+</div>
-                    <p className="text-xs text-memorial-gray">Mộ liệt sĩ</p>
+                    <div className="text-2xl font-bold text-memorial-red mb-1">1957</div>
+                    <p className="text-xs text-memorial-gray">Liệt sĩ an nghỉ</p>
                   </CardContent>
                 </Card>
                 
                 <Card className="bg-gradient-to-br from-memorial-gold/10 to-memorial-gold/20 border-memorial-gold/30">
                   <CardContent className="p-4 text-center">
-                    <div className="text-2xl font-bold text-memorial-gold mb-1">45+</div>
-                    <p className="text-xs text-memorial-gray">Năm gìn giữ</p>
+                    <div className="text-2xl font-bold text-memorial-gold mb-1">11.4</div>
+                    <p className="text-xs text-memorial-gray">Hecta diện tích</p>
                   </CardContent>
                 </Card>
               </div>
@@ -290,22 +283,22 @@ const About = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-memorial-red rounded-full"></div>
                     <div>
-                      <p className="text-sm font-medium text-memorial-dark">1979</p>
-                      <p className="text-xs text-memorial-gray">Thành lập nghĩa trang</p>
+                      <p className="text-sm font-medium text-memorial-dark">1979-1989</p>
+                      <p className="text-xs text-memorial-gray">Cuộc chiến bảo vệ biên giới</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-memorial-gold rounded-full"></div>
                     <div>
-                      <p className="text-sm font-medium text-memorial-dark">1990s</p>
-                      <p className="text-xs text-memorial-gray">Mở rộng quy mô</p>
+                      <p className="text-sm font-medium text-memorial-dark">1990</p>
+                      <p className="text-xs text-memorial-gray">Xây dựng nghĩa trang</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-memorial-red rounded-full"></div>
                     <div>
-                      <p className="text-sm font-medium text-memorial-dark">2000s</p>
-                      <p className="text-xs text-memorial-gray">Hiện đại hóa</p>
+                      <p className="text-sm font-medium text-memorial-dark">1991</p>
+                      <p className="text-xs text-memorial-gray">Hoàn thành và đưa vào sử dụng</p>
                     </div>
                   </div>
                 </CardContent>
