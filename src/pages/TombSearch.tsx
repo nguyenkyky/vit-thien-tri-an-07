@@ -5,6 +5,15 @@ import { Label } from "@/components/ui/label";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { 
+  Pagination, 
+  PaginationContent, 
+  PaginationItem, 
+  PaginationLink, 
+  PaginationNext, 
+  PaginationPrevious, 
+  PaginationEllipsis 
+} from "@/components/ui/pagination";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Search, RotateCcw } from "lucide-react";
@@ -35,6 +44,10 @@ const TombSearch = () => {
     donVi: "",
     ngayHySinh: ""
   });
+
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
 
   // Sample data
   const sampleData: MartyrData[] = [
@@ -122,6 +135,12 @@ const TombSearch = () => {
 
   const [data, setData] = useState<MartyrData[]>(sampleData);
 
+  // Calculate pagination
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentData = data.slice(startIndex, endIndex);
+
   const handleInputChange = (field: string, value: string) => {
     setSearchForm(prev => ({
       ...prev,
@@ -139,6 +158,7 @@ const TombSearch = () => {
       ngayHySinh: ""
     });
     setData(sampleData);
+    setCurrentPage(1);
   };
 
   const handleSearch = () => {
@@ -162,10 +182,15 @@ const TombSearch = () => {
     });
     
     setData(filteredData);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-memorial-cream to-background">
       <Header />
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
@@ -178,7 +203,7 @@ const TombSearch = () => {
         </div>
 
         {/* Search Form */}
-        <Card className="mb-8">
+        <Card className="mb-8 border-2 border-memorial-red/20 shadow-[var(--shadow-memorial)] bg-card/90 backdrop-blur-sm">
           <CardHeader>
             <CardTitle className="text-memorial-dark">Thông tin tìm kiếm</CardTitle>
           </CardHeader>
@@ -253,7 +278,7 @@ const TombSearch = () => {
         </Card>
 
         {/* Results Table */}
-        <Card>
+        <Card className="border-2 border-memorial-red/20 shadow-[var(--shadow-memorial)] bg-card/90 backdrop-blur-sm">
           <CardHeader>
             <CardTitle className="text-memorial-dark">
               Kết quả tìm kiếm ({data.length} kết quả)
@@ -262,46 +287,46 @@ const TombSearch = () => {
           <CardContent>
             <ScrollArea className="w-full">
               <div className="min-w-[1200px]">
-                <Table>
+                <Table className="border-2 border-memorial-red/30">
                   <TableHeader>
-                    <TableRow>
-                      <TableHead rowSpan={2} className="text-center border-r">STT</TableHead>
-                      <TableHead colSpan={4} className="text-center border-r">Vị trí mộ liệt sĩ</TableHead>
-                      <TableHead colSpan={7} className="text-center border-r">Thông tin về phần mộ</TableHead>
-                      <TableHead colSpan={2} className="text-center">Thông tin về di chuyển hài cốt liệt sĩ</TableHead>
+                    <TableRow className="bg-memorial-red/5 border-b-2 border-memorial-red/30">
+                      <TableHead rowSpan={2} className="text-center border-r-2 border-memorial-red/30 font-semibold text-memorial-dark">STT</TableHead>
+                      <TableHead colSpan={4} className="text-center border-r-2 border-memorial-red/30 font-semibold text-memorial-dark">Vị trí mộ liệt sĩ</TableHead>
+                      <TableHead colSpan={7} className="text-center border-r-2 border-memorial-red/30 font-semibold text-memorial-dark">Thông tin về phần mộ</TableHead>
+                      <TableHead colSpan={2} className="text-center font-semibold text-memorial-dark">Thông tin về di chuyển hài cốt liệt sĩ</TableHead>
                     </TableRow>
-                    <TableRow>
-                      <TableHead className="text-center">Khu</TableHead>
-                      <TableHead className="text-center">Lô</TableHead>
-                      <TableHead className="text-center">Hàng</TableHead>
-                      <TableHead className="text-center border-r">Mộ</TableHead>
-                      <TableHead className="text-center">Họ tên</TableHead>
-                      <TableHead className="text-center">Năm sinh</TableHead>
-                      <TableHead className="text-center">Nguyên quán</TableHead>
-                      <TableHead className="text-center">Nguyên quán (mới)</TableHead>
-                      <TableHead className="text-center">Đơn vị</TableHead>
-                      <TableHead className="text-center">Cấp bậc, chức vụ</TableHead>
-                      <TableHead className="text-center border-r">Ngày hy sinh</TableHead>
-                      <TableHead className="text-center">Địa phương an táng sau khi di chuyển</TableHead>
-                      <TableHead className="text-center">Người di chuyển</TableHead>
+                    <TableRow className="bg-memorial-red/5 border-b-2 border-memorial-red/30">
+                      <TableHead className="text-center border-r border-memorial-red/20 font-medium text-memorial-dark">Khu</TableHead>
+                      <TableHead className="text-center border-r border-memorial-red/20 font-medium text-memorial-dark">Lô</TableHead>
+                      <TableHead className="text-center border-r border-memorial-red/20 font-medium text-memorial-dark">Hàng</TableHead>
+                      <TableHead className="text-center border-r-2 border-memorial-red/30 font-medium text-memorial-dark">Mộ</TableHead>
+                      <TableHead className="text-center border-r border-memorial-red/20 font-medium text-memorial-dark">Họ tên</TableHead>
+                      <TableHead className="text-center border-r border-memorial-red/20 font-medium text-memorial-dark">Năm sinh</TableHead>
+                      <TableHead className="text-center border-r border-memorial-red/20 font-medium text-memorial-dark">Nguyên quán</TableHead>
+                      <TableHead className="text-center border-r border-memorial-red/20 font-medium text-memorial-dark">Nguyên quán (mới)</TableHead>
+                      <TableHead className="text-center border-r border-memorial-red/20 font-medium text-memorial-dark">Đơn vị</TableHead>
+                      <TableHead className="text-center border-r border-memorial-red/20 font-medium text-memorial-dark">Cấp bậc, chức vụ</TableHead>
+                      <TableHead className="text-center border-r-2 border-memorial-red/30 font-medium text-memorial-dark">Ngày hy sinh</TableHead>
+                      <TableHead className="text-center border-r border-memorial-red/20 font-medium text-memorial-dark">Địa phương an táng sau khi di chuyển</TableHead>
+                      <TableHead className="text-center font-medium text-memorial-dark">Người di chuyển</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {data.map((item) => (
-                      <TableRow key={item.stt}>
-                        <TableCell className="text-center border-r">{item.stt}</TableCell>
-                        <TableCell className="text-center">{item.khu}</TableCell>
-                        <TableCell className="text-center">{item.lo}</TableCell>
-                        <TableCell className="text-center">{item.hang}</TableCell>
-                        <TableCell className="text-center border-r">{item.mo}</TableCell>
-                        <TableCell className="font-medium">{item.hoTen}</TableCell>
-                        <TableCell className="text-center">{item.namSinh}</TableCell>
-                        <TableCell>{item.nguyenQuan}</TableCell>
-                        <TableCell>{item.nguyenQuanMoi}</TableCell>
-                        <TableCell>{item.donVi}</TableCell>
-                        <TableCell className="text-center">{item.capBacChucVu}</TableCell>
-                        <TableCell className="text-center border-r">{item.ngayHySinh}</TableCell>
-                        <TableCell>{item.diaPhuongAnTang || "—"}</TableCell>
+                    {currentData.map((item, index) => (
+                      <TableRow key={item.stt} className="hover:bg-memorial-cream/50 transition-colors border-b border-memorial-red/10">
+                        <TableCell className="text-center border-r-2 border-memorial-red/30 font-medium">{item.stt}</TableCell>
+                        <TableCell className="text-center border-r border-memorial-red/20">{item.khu}</TableCell>
+                        <TableCell className="text-center border-r border-memorial-red/20">{item.lo}</TableCell>
+                        <TableCell className="text-center border-r border-memorial-red/20">{item.hang}</TableCell>
+                        <TableCell className="text-center border-r-2 border-memorial-red/30">{item.mo}</TableCell>
+                        <TableCell className="font-semibold text-memorial-dark border-r border-memorial-red/20">{item.hoTen}</TableCell>
+                        <TableCell className="text-center border-r border-memorial-red/20">{item.namSinh}</TableCell>
+                        <TableCell className="border-r border-memorial-red/20">{item.nguyenQuan}</TableCell>
+                        <TableCell className="border-r border-memorial-red/20">{item.nguyenQuanMoi}</TableCell>
+                        <TableCell className="border-r border-memorial-red/20">{item.donVi}</TableCell>
+                        <TableCell className="text-center border-r border-memorial-red/20">{item.capBacChucVu}</TableCell>
+                        <TableCell className="text-center border-r-2 border-memorial-red/30">{item.ngayHySinh}</TableCell>
+                        <TableCell className="border-r border-memorial-red/20">{item.diaPhuongAnTang || "—"}</TableCell>
                         <TableCell>{item.nguoiDiChuyen || "—"}</TableCell>
                       </TableRow>
                     ))}
@@ -309,6 +334,90 @@ const TombSearch = () => {
                 </Table>
               </div>
             </ScrollArea>
+            
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="mt-6 flex justify-center">
+                <Pagination>
+                  <PaginationContent>
+                    {currentPage > 1 && (
+                      <PaginationItem>
+                        <PaginationPrevious 
+                          onClick={() => handlePageChange(currentPage - 1)}
+                          className="cursor-pointer hover:bg-memorial-cream/70"
+                        />
+                      </PaginationItem>
+                    )}
+                    
+                    {/* Show first page */}
+                    {currentPage > 3 && (
+                      <>
+                        <PaginationItem>
+                          <PaginationLink
+                            onClick={() => handlePageChange(1)}
+                            className="cursor-pointer hover:bg-memorial-cream/70"
+                          >
+                            1
+                          </PaginationLink>
+                        </PaginationItem>
+                        {currentPage > 4 && (
+                          <PaginationItem>
+                            <PaginationEllipsis />
+                          </PaginationItem>
+                        )}
+                      </>
+                    )}
+                    
+                    {/* Show current page and surrounding pages */}
+                    {Array.from({ length: totalPages }, (_, i) => i + 1)
+                      .filter(page => 
+                        page >= Math.max(1, currentPage - 2) && 
+                        page <= Math.min(totalPages, currentPage + 2)
+                      )
+                      .map(page => (
+                        <PaginationItem key={page}>
+                          <PaginationLink
+                            onClick={() => handlePageChange(page)}
+                            isActive={page === currentPage}
+                            className="cursor-pointer hover:bg-memorial-cream/70"
+                          >
+                            {page}
+                          </PaginationLink>
+                        </PaginationItem>
+                      ))
+                    }
+                    
+                    {/* Show last page */}
+                    {currentPage < totalPages - 2 && (
+                      <>
+                        {currentPage < totalPages - 3 && (
+                          <PaginationItem>
+                            <PaginationEllipsis />
+                          </PaginationItem>
+                        )}
+                        <PaginationItem>
+                          <PaginationLink
+                            onClick={() => handlePageChange(totalPages)}
+                            className="cursor-pointer hover:bg-memorial-cream/70"
+                          >
+                            {totalPages}
+                          </PaginationLink>
+                        </PaginationItem>
+                      </>
+                    )}
+                    
+                    {currentPage < totalPages && (
+                      <PaginationItem>
+                        <PaginationNext 
+                          onClick={() => handlePageChange(currentPage + 1)}
+                          className="cursor-pointer hover:bg-memorial-cream/70"
+                        />
+                      </PaginationItem>
+                    )}
+                  </PaginationContent>
+                </Pagination>
+              </div>
+            )}
           </CardContent>
         </Card>
       </main>
