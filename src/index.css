@@ -46,6 +46,9 @@ All colors MUST be HSL.
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--memorial-red)) 0%, hsl(345 65% 35%) 100%);
     --gradient-memorial: linear-gradient(45deg, hsl(var(--memorial-gold)) 0%, hsl(45 85% 60%) 100%);
+    --gradient-sunset: linear-gradient(135deg, hsl(345 75% 45%) 0%, hsl(25 90% 60%) 50%, hsl(45 100% 50%) 100%);
+    --gradient-peaceful: linear-gradient(135deg, hsl(210 40% 95%) 0%, hsl(45 95% 95%) 100%);
+    --gradient-elegant: linear-gradient(135deg, hsl(345 25% 15%) 0%, hsl(345 35% 25%) 100%);
     
     /* Shadows */
     --shadow-memorial: 0 4px 20px hsl(var(--memorial-red) / 0.15);

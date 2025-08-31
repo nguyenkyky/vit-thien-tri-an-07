@@ -4,7 +4,7 @@ import { MapPin, Users, Calendar, ArrowRight } from "lucide-react";
 
 const IntroSection = () => {
   return (
-    <section className="py-16 bg-memorial-cream">
+    <section className="py-16 bg-gradient-to-br from-memorial-cream via-white to-memorial-cream/50">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}

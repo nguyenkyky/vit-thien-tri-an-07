@@ -52,7 +52,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gradient-to-br from-white via-memorial-cream/20 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold text-memorial-dark mb-4">
@@ -84,7 +84,7 @@ const FeaturesSection = () => {
         </div>
 
         {/* Quick access */}
-        <div className="bg-memorial-cream rounded-lg p-8">
+        <div className="bg-gradient-to-br from-memorial-cream to-memorial-cream/80 rounded-lg p-8 border border-memorial-gold/20 shadow-elegant">
           <div className="text-center mb-6">
             <Heart className="w-12 h-12 text-memorial-red mx-auto mb-4" />
             <h4 className="text-2xl font-bold text-memorial-dark mb-2">
