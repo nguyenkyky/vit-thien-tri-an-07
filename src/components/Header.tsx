@@ -72,7 +72,13 @@ const Header = () => {
             >
               Tra cứu mộ
             </a>
-            {menuItems.slice(2).map((item, index) => (
+            <a
+              href="/visit-registration"
+              className="text-memorial-dark hover:text-memorial-red transition-colors font-medium"
+            >
+              Đăng ký viếng
+            </a>
+            {menuItems.slice(3).map((item, index) => (
               <a
                 key={index}
                 href="#"
