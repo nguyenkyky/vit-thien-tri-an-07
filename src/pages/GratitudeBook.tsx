@@ -1,9 +1,7 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 interface Contributor {
   id: number;
@@ -13,12 +11,13 @@ interface Contributor {
   amount?: string;
 }
 
-const generateFakeData = (startId: number, count: number): Contributor[] => {
+const generateFakeData = (count: number): Contributor[] => {
   const names = [
     "Nguyễn Văn An", "Trần Thị Bình", "Lê Văn Cường", "Phạm Thị Dung", 
     "Hoàng Văn Em", "Vũ Thị Phượng", "Đặng Văn Giang", "Bùi Thị Hoa",
     "Ngô Văn Inh", "Đinh Thị Kim", "Tạ Văn Long", "Lý Thị Mai",
-    "Dương Văn Nam", "Cao Thị Oanh", "Phan Văn Phúc", "Đỗ Thị Quỳnh"
+    "Dương Văn Nam", "Cao Thị Oanh", "Phan Văn Phúc", "Đỗ Thị Quỳnh",
+    "Chu Văn Quân", "Võ Thị Rộ", "Lâm Văn Sơn", "Nguyễn Thị Tâm"
   ];
   
   const contributions = [
@@ -27,60 +26,22 @@ const generateFakeData = (startId: number, count: number): Contributor[] => {
     "Trái cây", "Chè cúng", "Bánh chưng", "Hoa đào", "Cờ hoa"
   ];
 
-  const amounts = ["500.000đ", "1.000.000đ", "2.000.000đ", "300.000đ", "750.000đ"];
+  const amounts = ["500.000đ", "1.000.000đ", "2.000.000đ", "300.000đ", "750.000đ", "1.500.000đ"];
 
   return Array.from({ length: count }, (_, i) => ({
-    id: startId + i,
+    id: i + 1,
     name: names[Math.floor(Math.random() * names.length)],
     contribution: contributions[Math.floor(Math.random() * contributions.length)],
-    time: new Date(Date.now() - Math.floor(Math.random() * 30 * 24 * 60 * 60 * 1000)).toLocaleDateString('vi-VN'),
-    amount: Math.random() > 0.3 ? amounts[Math.floor(Math.random() * amounts.length)] : undefined
+    time: new Date(Date.now() - Math.floor(Math.random() * 90 * 24 * 60 * 60 * 1000)).toLocaleDateString('vi-VN'),
+    amount: amounts[Math.floor(Math.random() * amounts.length)]
   }));
 };
 
 const GratitudeBook = () => {
-  const [contributors, setContributors] = useState<Contributor[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [hasMore, setHasMore] = useState(true);
-  const [page, setPage] = useState(0);
-
-  const loadMoreContributors = useCallback(async () => {
-    if (loading || !hasMore) return;
-    
-    setLoading(true);
-    
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    const newContributors = generateFakeData(page * 20, 20);
-    
-    setContributors(prev => [...prev, ...newContributors]);
-    setPage(prev => prev + 1);
-    setLoading(false);
-    
-    // Stop infinite scroll after 200 items
-    if (page >= 9) {
-      setHasMore(false);
-    }
-  }, [loading, hasMore, page]);
-
-  useEffect(() => {
-    loadMoreContributors();
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (
-        window.innerHeight + document.documentElement.scrollTop
-        >= document.documentElement.offsetHeight - 1000
-      ) {
-        loadMoreContributors();
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [loadMoreContributors]);
+  const [contributors] = useState<Contributor[]>(() => generateFakeData(50));
+  
+  // Duplicate data for seamless loop
+  const duplicatedContributors = [...contributors, ...contributors];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-background/80">
@@ -97,80 +58,55 @@ const GratitudeBook = () => {
           </p>
         </div>
 
-        <div className="grid gap-4 md:gap-6">
-          {contributors.map((contributor) => (
-            <Card 
-              key={contributor.id} 
-              className="transition-all duration-300 hover:shadow-lg hover:shadow-primary-glow/20 border-l-4 border-l-primary bg-gradient-to-r from-card/50 to-card"
-            >
-              <CardContent className="p-6">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-xl font-semibold text-foreground">
-                        {contributor.name}
-                      </h3>
-                      <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
-                        Nhà hảo tâm
-                      </Badge>
-                    </div>
-                    
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-muted-foreground">Đóng góp:</span>
-                        <span className="font-medium text-foreground">{contributor.contribution}</span>
-                      </div>
-                      
-                      {contributor.amount && (
-                        <div className="flex items-center gap-2">
-                          <span className="text-sm text-muted-foreground">Giá trị:</span>
-                          <span className="font-semibold text-primary">{contributor.amount}</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  
-                  <div className="text-right">
-                    <span className="text-sm text-muted-foreground">
+        <div className="bg-card rounded-lg border shadow-lg overflow-hidden">
+          <div className="max-h-[600px] overflow-hidden">
+            <Table className="relative">
+              <TableHeader className="sticky top-0 bg-primary/10 z-10">
+                <TableRow>
+                  <TableHead className="w-[60px] text-center font-semibold">STT</TableHead>
+                  <TableHead className="font-semibold">Tên nhà hảo tâm</TableHead>
+                  <TableHead className="font-semibold">Hiện vật đóng góp</TableHead>
+                  <TableHead className="font-semibold">Giá trị</TableHead>
+                  <TableHead className="font-semibold">Thời gian</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody 
+                className="animate-[scroll_60s_linear_infinite]"
+                style={{
+                  animation: 'scroll 60s linear infinite'
+                }}
+              >
+                {duplicatedContributors.map((contributor, index) => (
+                  <TableRow 
+                    key={`${contributor.id}-${index}`}
+                    className="hover:bg-primary/5 transition-colors border-b border-border/50"
+                  >
+                    <TableCell className="text-center font-medium text-muted-foreground">
+                      {(index % contributors.length) + 1}
+                    </TableCell>
+                    <TableCell className="font-semibold text-foreground">
+                      {contributor.name}
+                    </TableCell>
+                    <TableCell className="text-foreground">
+                      {contributor.contribution}
+                    </TableCell>
+                    <TableCell className="font-semibold text-primary">
+                      {contributor.amount}
+                    </TableCell>
+                    <TableCell className="text-muted-foreground">
                       {contributor.time}
-                    </span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
           
-          {loading && (
-            <div className="space-y-4">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Card key={i} className="border-l-4 border-l-primary/20">
-                  <CardContent className="p-6">
-                    <div className="flex justify-between items-center">
-                      <div className="space-y-2 flex-1">
-                        <div className="flex items-center gap-3">
-                          <Skeleton className="h-6 w-32" />
-                          <Skeleton className="h-5 w-20" />
-                        </div>
-                        <div className="flex gap-6">
-                          <Skeleton className="h-4 w-24" />
-                          <Skeleton className="h-4 w-20" />
-                        </div>
-                      </div>
-                      <Skeleton className="h-4 w-16" />
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          )}
-          
-          {!hasMore && (
-            <div className="text-center py-8">
-              <p className="text-muted-foreground">
-                Cảm ơn tất cả các nhà hảo tâm đã đóng góp 🙏
-              </p>
-            </div>
-          )}
+          <div className="text-center py-4 bg-muted/30 border-t">
+            <p className="text-sm text-muted-foreground">
+              ✨ Cảm ơn tất cả các nhà hảo tâm đã đóng góp cho công tác chăm sóc liệt sĩ ✨
+            </p>
+          </div>
         </div>
       </main>
       
