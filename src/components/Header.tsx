@@ -84,15 +84,12 @@ const Header = () => {
             >
               Đặt đồ lễ
             </a>
-            {menuItems.slice(4).map((item, index) => (
-              <a
-                key={index}
-                href="#"
-                className="text-memorial-dark hover:text-memorial-red transition-colors font-medium"
-              >
-                {item}
-              </a>
-            ))}
+            <a
+              href="/gratitude-book"
+              className="text-memorial-dark hover:text-memorial-red transition-colors font-medium"
+            >
+              Sổ vàng tri ân
+            </a>
           </nav>
 
           {/* Mobile menu button */}

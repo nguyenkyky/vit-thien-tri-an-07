@@ -9,6 +9,7 @@ import TombSearch from "./pages/TombSearch";
 import VisitRegistration from "./pages/VisitRegistration";
 import ProductListing from "./pages/ProductListing";
 import ProductDetail from "./pages/ProductDetail";
+import GratitudeBook from "./pages/GratitudeBook";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/visit-registration" element={<VisitRegistration />} />
           <Route path="/products" element={<ProductListing />} />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/gratitude-book" element={<GratitudeBook />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
