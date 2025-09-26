@@ -90,6 +90,12 @@ const Header = () => {
             >
               Sổ vàng tri ân
             </a>
+            <a
+              href="/featured-events"
+              className="text-memorial-dark hover:text-memorial-red transition-colors font-medium"
+            >
+              Sự kiện nổi bật
+            </a>
           </nav>
 
           {/* Mobile menu button */}
